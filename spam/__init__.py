@@ -9,6 +9,7 @@ from spam.config import Config
 
 StartTime = time.time()
 log = logging.getLogger()
+clients = []
 
 ENABLE = Config.ENABLE
 
@@ -26,40 +27,13 @@ if ENABLE:
         user1_api_id = Config.user1_api_id
         user1_api_hash = Config.user1_api_hash
 
-    # if Config.user2_api_id and Config.user2_api_hash:
-    #     user2_api_id = Config.user2_api_id
-    #     user2_api_hash = Config.user2_api_hash
-
-    # if Config.user3_api_id and Config.user3_api_hash:
-    #     user3_api_id = Config.user3_api_id
-    #     user3_api_hash = Config.user3_api_hash
-
-    # if Config.user4_api_id and Config.user4_api_hash:
-    #     user4_api_id = Config.user4_api_id
-    #     user4_api_hash = Config.user4_api_hash
-
-    # if Config.user5_api_id and Config.user5_api_hash:
-    #     user5_api_id = Config.user5_api_id
-    #     user5_api_hash = Config.user5_api_hash
-
-    # if Config.user6_api_id and Config.user6_api_hash:
-    #     user6_api_id = Config.user6_api_id
-    #     user6_api_hash = Config.user6_api_hash
-
-    # if Config.user7_api_id and Config.user7_api_hash:
-    #     user7_api_id = Config.user7_api_id
-    #     user7_api_hash = Config.user7_api_hash
-    
-    # if Config.user8_api_id and Config.user3_api_hash:
-    #     user8_api_id = Config.user8_api_id
-    #     user8_api_hash = Config.user8_api_hash
-
     Command = Config.Command
 else:
     print('Enable me first in config.py')
 
 if user1_api_id and user1_api_hash:
-    user1 = Client("user1", api_id=user1_api_id, api_hash=user1_api_hash)
+    clients += [Client("spambot", api_id=user1_api_id, api_hash=user1_api_hash)]
+
 
 # if user2_api_id and user2_api_hash:
 #     user2 = Client("user2", api_id=user2_api_id, api_hash=user2_api_hash)

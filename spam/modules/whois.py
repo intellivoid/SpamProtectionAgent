@@ -5,7 +5,7 @@ from pyrogram import Filters, User
 from pyrogram.api import functions
 from pyrogram.errors import PeerIdInvalid
 
-from spam import user1, Command
+# from spam import clients, Command
 
 __MODULE__ = "Whois"
 __HELP__ = """
@@ -80,7 +80,7 @@ def ProfilePicUpdate(user_pic):
     return datetime.fromtimestamp(user_pic[0].date).strftime("%d.%m.%Y, %H:%M:%S")
 
 
-@user1.on_message(Filters.me & Filters.command(["whois"], Command))
+# @clients.on_message(Filters.me & Filters.command(["whois"], Command))
 async def whois(client, message):
     cmd = message.command
     if not message.reply_to_message and len(cmd) == 1:

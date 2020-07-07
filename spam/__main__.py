@@ -4,8 +4,8 @@ import sys
 import time
 import traceback
 
-from spam import user1
-    # user2, user3, user4, user5, user6, user7, user8
+from spam import clients
+
 from spam.modules import ALL_MODULES
 
 BOT_RUNTIME = 0
@@ -18,27 +18,15 @@ async def get_runtime():
     return BOT_RUNTIME
 
 async def reload_userbot():
-    await user1.start()
-    # await user2.start()
-    # await user3.start()
-    # await user4.start()
-    # await user5.start()
-    # await user6.start()
-    # await user7.start()
-    # await user8.start()
+    await clients[0].start()
+
+
     for modul in ALL_MODULES:
         imported_module = importlib.import_module("spam.modules." + modul)
         importlib.reload(imported_module)
 
 async def reinitial():
-    await user1.start()
-    # await user2.start()
-    # await user3.start()
-    # await user4.start()
-    # await user5.start()
-    # await user6.start()
-    # await user7.start()
-    # await user8.start()
+    await clients[0].start()
 
 
 async def start_bot():
@@ -46,14 +34,6 @@ async def start_bot():
     print("----- Checking user and bot... -----")
     await reinitial()
     print("----------- Check done! ------------")
-    # userbot
-    # await user2.start()
-    # await user3.start()
-    # await user4.start()
-    # await user5.start()
-    # await user6.start()
-    # await user7.start()
-    # await user8.start()
     for modul in ALL_MODULES:
         imported_module = importlib.import_module("spam.modules." + modul)
         if hasattr(imported_module, "__MODULE__") and imported_module.__MODULE__:
@@ -69,7 +49,7 @@ async def start_bot():
     print("SpamProtection modules: " + str(ALL_MODULES))
     print("-----------------------")
     print("Bot run successfully!")
-    await user1.idle()
+    await clients[0].idle()
 
 if __name__ == '__main__':
     BOT_RUNTIME = int(time.time())
