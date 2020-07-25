@@ -123,6 +123,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Pyrogram stuff + Userbot config
 *.session
 spam/config.py
 *.session-journal
