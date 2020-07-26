@@ -96,7 +96,7 @@ async def whois(client, message):
     try:
         user = await client.get_users(get_user)
     except PeerIdInvalid:
-        await message.edit("I don't know that User.")
+        await message.edit("I don't know that User. Forward their messages to me (only if forward privacy enabled) and try again.")
         await sleep(2)
         await message.delete()
         return
