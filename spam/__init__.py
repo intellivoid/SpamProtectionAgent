@@ -15,7 +15,7 @@ ENABLE = Config.ENABLE
 
 # if version < 3.6, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 6:
-    logging.error("You MUST have a python version of at least 3.6! Multiple features depend on this. Bot quitting.")
+    logging.error("You MUST have a python version of at least 3.6! Multiple features depend on this. Bot quitting...")
     quit(1)
 
 
@@ -29,10 +29,10 @@ if ENABLE:
 
     Command = Config.Command
 else:
-    print('Enable me first in config.py')
+    print('Enable me first in config.py!')
 
 if user1_api_id and user1_api_hash:
-    clients += [Client("spambot", api_id=user1_api_id, api_hash=user1_api_hash)]
+    clients += [Client("SpamProtectionAgentBot", api_id=user1_api_id, api_hash=user1_api_hash)]
 
 
 # if user2_api_id and user2_api_hash:
