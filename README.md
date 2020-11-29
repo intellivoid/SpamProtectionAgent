@@ -2,6 +2,11 @@
 
 An userbot that automates the process of reporting spam for [Spam Protection](https://t.me/SpamProtectionLogs), an antispam service by Intellivoid.
 
+## Notice!
+
+This is not actively being worked on, don't expect it to work or get proper support for this piece of software. If you would like to contribute then
+let us know in @IntellivoidDiscussions 
+
 ## Terms of Service
 
 By using this userbot (or any userbot), you agree:
